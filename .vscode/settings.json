@@ -1,3 +1,8 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.compile.nullAnalysis.mode":"automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "cucumberautocomplete.steps": ["src/test/java/steps/*.java"], 
+    "cucumberautocomplete.syncfeatures":"test/features/*.feature", 
+    "cucumberautocomplete.strictGherkincompletion":true,
+    "cucumberautocomplete.strict GherkinValidation": true,
 }
