@@ -5,8 +5,9 @@ Feature: Realizar compra con usuario logeado
     Given un usuario navega a www.saucedemo.com
 
    Scenario Outline:Completar el proceso de compra desde el inicio de sesion hasta la confirmacion de la orden
-    When un usuario inicia sesion con las credenciales <username> y <password>
-    
+    When el usuario inicia sesion con las credenciales <username> y <password>
+    And el usuario agrega Sauce Labs Backpack al carrito de compras y navega al cart
+    And el usuario procede al checkout
     Examples:
       | username      | password     | nombre    | apellido | codpostal |
       | standard_user | secret_sauce | alejandro | garzon   | 110421    |
