@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.*;
 
@@ -46,6 +47,21 @@ protected static WebDriver driver;
         Find(locator).sendKeys(KeyToSend);
     }
 
+    public void validateElementText(String locator, String expectedText) {
+        WebElement element = Find(locator);
+        String actualText = element.getText();
+        if (!actualText.contains(expectedText)) {
+            throw new AssertionError("Texto Buscado '" + expectedText + "' no encontrado en el texto del elemento '" + actualText + "'");
+        }
+    }
     
+    public String getCurrentURL() {
+        return driver.getCurrentUrl();
+    }
+    public void assertCurrentURL(String expectedURL) {
+        String currentURL = getCurrentURL();
+        Assert.assertNotEquals("URL no coincide", expectedURL, currentURL); 
+    }
 
 }
+

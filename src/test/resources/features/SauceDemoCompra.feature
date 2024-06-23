@@ -10,8 +10,9 @@ Feature: Realizar compra con usuario logeado
     And el usuario procede al checkout
     And el usuario introduce los datos <nombre>,<apellido>,<codpostal> y continua
     And el usuario finaliza la compra
-    Then el usuario ve la página de confirmación de la orden
-    But no debería retornar al home
+    Then el usuario ve la pagina de confirmacion de la orden
+    But no deberia retornar al home
     Examples:
       | username      | password     | nombre    | apellido | codpostal |
       | standard_user | secret_sauce | alejandro | garzon   | 110421    |
+      

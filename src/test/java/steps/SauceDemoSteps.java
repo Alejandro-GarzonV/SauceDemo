@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
+import pages.OrderCompletePage;
 import pages.OverviewPage;
 import pages.CartPage;
 import pages.InformationCheckoutPage;
@@ -18,6 +19,7 @@ public class SauceDemoSteps {
     CartPage cart = new CartPage();
     InformationCheckoutPage inf = new InformationCheckoutPage();
     OverviewPage over = new OverviewPage();
+    OrderCompletePage order = new OrderCompletePage();
     
     @Given("un usuario navega a www.saucedemo.com")
     public void UserNavigateSD(){
@@ -45,12 +47,12 @@ public class SauceDemoSteps {
     public void completePurchase() {
         over.clickfinishButton();
     }
-    @Then("el usuario ve la página de confirmación de la orden")
+    @Then("el usuario ve la pagina de confirmacion de la orden")
     public void verifyOrderConfirmation() {
-        //inventory.verifyOrderConfirmation();
+        order.assertOrderCompletion();
     }
-    @But("no debería retornar al home")
+    @But("no deberia retornar al home")
     public void verifyNotReturnToHome() {
-        // Implementar lógica para verificar que no se retorne al home
+        order.assertNotReturnHomePage();
     }
 }
