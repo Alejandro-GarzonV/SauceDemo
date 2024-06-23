@@ -2,7 +2,6 @@ package pages;
 
 public class LoginPage extends BasePage {
 
-    
     private String usernameT = "//input[@id='user-name']";
     private String passwordT = "//input[@id='password']";
     private String loginButton = "//input[@id='login-button']";
@@ -24,6 +23,4 @@ public class LoginPage extends BasePage {
         clickElement(loginButton);
     }
     
-
-
 }
