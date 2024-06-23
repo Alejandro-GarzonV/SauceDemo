@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
 import pages.CartPage;
+import pages.InformationCheckoutPage;
 import pages.InventoryPage;
 
 public class SauceDemoSteps {
@@ -12,6 +13,7 @@ public class SauceDemoSteps {
     LoginPage login = new LoginPage();
     InventoryPage inventory = new InventoryPage();
     CartPage cart = new CartPage();
+    InformationCheckoutPage inf = new InformationCheckoutPage();
     
     @Given("un usuario navega a www.saucedemo.com")
     public void UserNavigateSD(){
@@ -30,5 +32,9 @@ public class SauceDemoSteps {
     public void proceedToCheckout() {
         cart.clickCheckoutButton();
     }
-
+    @And("el usuario introduce los datos {word},{word},{word} y continua")
+    public void InserShippingInformation(String name,String lastName,String Cod) {
+        inf.enterShippingInformation(name,lastName,Cod);
+        inf.clickContinueButton();
+    }
 }
