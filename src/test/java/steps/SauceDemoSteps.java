@@ -1,9 +1,12 @@
 package steps;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
+import pages.OverviewPage;
 import pages.CartPage;
 import pages.InformationCheckoutPage;
 import pages.InventoryPage;
@@ -14,6 +17,7 @@ public class SauceDemoSteps {
     InventoryPage inventory = new InventoryPage();
     CartPage cart = new CartPage();
     InformationCheckoutPage inf = new InformationCheckoutPage();
+    OverviewPage over = new OverviewPage();
     
     @Given("un usuario navega a www.saucedemo.com")
     public void UserNavigateSD(){
@@ -36,5 +40,17 @@ public class SauceDemoSteps {
     public void InserShippingInformation(String name,String lastName,String Cod) {
         inf.enterShippingInformation(name,lastName,Cod);
         inf.clickContinueButton();
+    }
+    @And("el usuario finaliza la compra")
+    public void completePurchase() {
+        over.clickfinishButton();
+    }
+    @Then("el usuario ve la página de confirmación de la orden")
+    public void verifyOrderConfirmation() {
+        //inventory.verifyOrderConfirmation();
+    }
+    @But("no debería retornar al home")
+    public void verifyNotReturnToHome() {
+        // Implementar lógica para verificar que no se retorne al home
     }
 }
