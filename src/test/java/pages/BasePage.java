@@ -60,7 +60,7 @@ protected static WebDriver driver;
     }
     public void assertCurrentURL(String expectedURL) {
         String currentURL = getCurrentURL();
-        Assert.assertNotEquals("URL no coincide", expectedURL, currentURL); 
+        Assert.assertNotEquals("ya no se encuentra en la URL de confirmacion del purchase", expectedURL, currentURL); 
     }
 
 }
