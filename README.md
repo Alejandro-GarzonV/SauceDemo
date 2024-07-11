@@ -18,7 +18,14 @@ Para sistemas Unix (Linux, macOS), ejecuta: ./gradlew test
 Para sistemas Windows, ejecuta: gradlew.bat test
 
 3.Reporte de Cucumber
-- Después de ejecutar las pruebas, Cucumber generará un reporte con la cantidad de escenarios ejecutados, navega al directorio build/reports/tests/test/index.html dentro del proyecto. 
+- Después de ejecutar las pruebas, Cucumber generará un reporte con la cantidad de escenarios ejecutados, navega al directorio build/reports/tests/test/index.html dentro del proyecto.
+
+  
          -Aquí encontrarás el reporte HTML generado por Gradle para las pruebas ejecutadas: cd build/reports/tests/test
+
          -Abre el archivo index.html en tu navegador preferido para ver el reporte detallado de las pruebas ejecutadas por Gradle.
+
+  
 -(Opcional) En la ruta https://reports.cucumber.io/reports/d5d959d4-4693-4923-8224-5483f7c5247b puedes encontrar un reporte  relacionados  del proyecto,alli lo puedas visualizar
+
+
